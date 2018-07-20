@@ -77,6 +77,9 @@ public final class SortOrder {
         /* Song sort order Z-A */
         String SONG_Z_A = SONG_A_Z + " DESC";
 
+        /* Song sort order last modify date*/
+        String SONG_MODIFY = MediaStore.Audio.Media.DATE_MODIFIED + " DESC";
+
         /* Song sort order artist */
         String SONG_ARTIST = MediaStore.Audio.Artists.DEFAULT_SORT_ORDER;
 

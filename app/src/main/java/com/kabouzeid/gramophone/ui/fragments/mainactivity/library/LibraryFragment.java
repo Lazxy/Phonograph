@@ -137,13 +137,13 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
         tabs.setSelectedTabIndicatorColor(ThemeStore.accentColor(getActivity()));
 
         updateTabVisibility();
-        
+
         if (PreferenceUtil.getInstance(getContext()).rememberLastTab()) {
             pager.setCurrentItem(PreferenceUtil.getInstance(getContext()).getLastPage());
         }
         pager.addOnPageChangeListener(this);
     }
-    
+
     private void updateTabVisibility() {
         // hide the tab bar when only a single tab is visible
         tabs.setVisibility(pagerAdapter.getCount() == 1 ? View.GONE : View.VISIBLE);
@@ -363,12 +363,8 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
                     .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_A_Z));
             sortOrderMenu.add(0, R.id.action_song_sort_order_desc, 1, R.string.sort_order_z_a)
                     .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_Z_A));
-            sortOrderMenu.add(0, R.id.action_song_sort_order_artist, 2, R.string.sort_order_artist)
-                    .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_ARTIST));
-            sortOrderMenu.add(0, R.id.action_song_sort_order_album, 3, R.string.sort_order_album)
-                    .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_ALBUM));
-            sortOrderMenu.add(0, R.id.action_song_sort_order_year, 4, R.string.sort_order_year)
-                    .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_YEAR));
+            sortOrderMenu.add(0,R.id.action_song_sort_order_modify,2,R.string.sort_order_modify)
+                    .setChecked(currentSortOrder.equals(SortOrder.SongSortOrder.SONG_MODIFY));
         }
 
         sortOrderMenu.setGroupCheckable(0, true, true);
@@ -408,14 +404,8 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
                 case R.id.action_song_sort_order_desc:
                     sortOrder = SortOrder.SongSortOrder.SONG_Z_A;
                     break;
-                case R.id.action_song_sort_order_artist:
-                    sortOrder = SortOrder.SongSortOrder.SONG_ARTIST;
-                    break;
-                case R.id.action_song_sort_order_album:
-                    sortOrder = SortOrder.SongSortOrder.SONG_ALBUM;
-                    break;
-                case R.id.action_song_sort_order_year:
-                    sortOrder = SortOrder.SongSortOrder.SONG_YEAR;
+                case R.id.action_song_sort_order_modify:
+                    sortOrder = SortOrder.SongSortOrder.SONG_MODIFY;
                     break;
             }
         }

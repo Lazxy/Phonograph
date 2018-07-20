@@ -291,6 +291,7 @@
     <string name="action_sort_order">排序方式</string>
     <string name="sort_order_a_z">按首字符（正序）</string>
     <string name="sort_order_z_a">按首字符（倒序）</string>
+    <string name="sort_order_modify">按添加时间</string>
     <string name="sort_order_artist">艺术家</string>
     <string name="sort_order_album">专辑</string>
     <string name="sort_order_year">年份</string>

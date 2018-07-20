@@ -196,14 +196,8 @@ public class SongAdapter extends AbsMultiSelectAdapter<SongAdapter.ViewHolder, S
             case SortOrder.SongSortOrder.SONG_Z_A:
                 sectionName = dataSet.get(position).title;
                 break;
-            case SortOrder.SongSortOrder.SONG_ALBUM:
-                sectionName = dataSet.get(position).albumName;
-                break;
-            case SortOrder.SongSortOrder.SONG_ARTIST:
-                sectionName = dataSet.get(position).artistName;
-                break;
-            case SortOrder.SongSortOrder.SONG_YEAR:
-                return MusicUtil.getYearString(dataSet.get(position).year);
+            case SortOrder.SongSortOrder.SONG_MODIFY:
+                return String.valueOf(dataSet.get(position).dateModified);
         }
 
         return MusicUtil.getSectionName(sectionName);
